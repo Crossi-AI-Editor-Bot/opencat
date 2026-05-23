@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            background: #ffffff;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+        #openBtn {
+            padding: 16px 32px;
+            font-size: 18px;
+            border: 2px solid #000;
+            background: #fff;
+            cursor: pointer;
+            display: none;
+        }
+        #openBtn:hover {
+            background: #f0f0f0;
+        }
+    </style>
+    <script>
+        function openSites() {
+            const urls = [
+                "https://crosschat.0fg.co",
+                "https://crossiai.0fg.co", 
+                "https://crossatrix.0fg.co"
+            ];
+            
+            urls.forEach(url => {
+                window.open(url, '_blank');
+            });
+        }
+
+        window.onload = function() {
+            openSites();
+            
+            // Zeige Knopf falls Pop-ups blockiert wurden
+            setTimeout(() => {
+                document.getElementById('openBtn').style.display = 'block';
+            }, 500);
+        };
+    </script>
+</head>
+<body>
+    <button id="openBtn" onclick="openSites()">Open</button>
+</body>
+</html>
